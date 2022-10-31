@@ -29,7 +29,7 @@ This is a Node JS and Express API made to communicate with a Mongo DB database o
 ### **Books**
 |Routes|HTTP|Description|Expected Response|Required Body|
 |:----|:----|:----|:----|:----|
-|/books|`GET`|Gets all books. Results are paginated.|{<br /> &nbsp; "_id": {"$oid": 24 Digit Hex Code},<br /> &nbsp; "title": string,<br /> &nbsp; "author": string,<br /> &nbsp; "pages": number,<br /> &nbsp; "rating": number,<br /> &nbsp; "genres": [string, ...],<br /> &nbsp; "reviews": [{"name": string, "body": string}, ...]<br />}| |
+|/books|`GET`|Gets all books. Results are paginated. Default params: /?page=0&limit=3|{<br /> &nbsp; "_id": {"$oid": 24 Digit Hex Code},<br /> &nbsp; "title": string,<br /> &nbsp; "author": string,<br /> &nbsp; "pages": number,<br /> &nbsp; "rating": number,<br /> &nbsp; "genres": [string, ...],<br /> &nbsp; "reviews": [{"name": string, "body": string}, ...]<br />}| |
 |/books/id|`GET`|Gets book based on ID.|{<br /> &nbsp; "_id": {"$oid": 24 Digit Hex Code},<br /> &nbsp; "title": string,<br /> &nbsp; "author": string,<br /> &nbsp; "pages": number,<br /> &nbsp; "rating": number,<br /> &nbsp; "genres": [string, ...],<br /> &nbsp; "reviews": [{"name": string, "body": string}, ...]<br />}| |
 |/books|`POST`|Creates new book|{<br /> &nbsp; "acknowledged": boolean,<br /> &nbsp; "insertedId": 24 Digit Hex Code,<br />}|{<br />&nbsp;"title": string, <br />&nbsp;"author": string, <br />&nbsp;"pages": number, <br />&nbsp;"rating": number <br />&nbsp;"genres": [string, ...], <br />&nbsp;"reviews": [{name: string, body: string}, ...] <br >}|
 |/books/:id|`DELETE`|Deletes book based on ID.|{<br /> &nbsp; "acknowledged": boolean,<br /> &nbsp; "deletedCount": number,<br />}| |
@@ -109,16 +109,14 @@ Format
     ```
     Variables required:
     - **PORT** - Port for the server to run on
-    - **DB_USER** - Username used to access database
-    - **DB_PASS** - Password associated with username
+    - **DB_URL** - Mongo DB Atlas cluster connection string
   <br />
 
     Example
 
     ```
     PORT=3001
-    DB_USER=root
-    DB_PASS=password
+    DB_URL=mongodb+srv://<username>:<password>@cluster0.yrj8epb.mongodb.net/?retryWrites=true&w=majority
     ```
 <br />
 
