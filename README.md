@@ -15,10 +15,10 @@ This is a Node JS and Express API made to communicate with a Mongo DB database o
 - **express**
 - **mongodb**
 - **nodemon**
+- **dotenv**
 <br />  
 
   
-
 ## Routes
 
 ### **Root**
@@ -98,8 +98,29 @@ Format
 1. ### Install Node JS
     Refer to https://nodejs.org/en/ to install nodejs
 
-3. ### Create Mongo DB database
+2. ### Create Mongo DB database
     Refer to **Database** section of the README for the format for documents in the "Books" collection.
+
+3. ### Create environment variables in .env file
+
+    ```bash
+    cd server/
+    touch .env
+    ```
+    Variables required:
+    - **PORT** - Port for the server to run on
+    - **DB_USER** - Username used to access database
+    - **DB_PASS** - Password associated with username
+  <br />
+
+    Example
+
+    ```
+    PORT=3001
+    DB_USER=root
+    DB_PASS=password
+    ```
+<br />
 
 <!-- Run Locally -->
 ## Run Locally

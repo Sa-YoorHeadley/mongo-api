@@ -2,7 +2,9 @@ const {MongoClient} = require('mongodb')
 let databaseConnection
 
 const connectToDatabase = (callback) => {
-    MongoClient.connect('mongodb://localhost:27017/bookstore')
+    const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.yrj8epb.mongodb.net/bookstore?retryWrites=true&w=majority`
+    const local = 'mongodb://localhost:27017/bookstore'
+    MongoClient.connect(url)
     .then((client) => {
         databaseConnection = client.db()
         return callback()

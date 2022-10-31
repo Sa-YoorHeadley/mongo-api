@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express =  require('express')
 const {ObjectId} = require('mongodb')
 const { connectToDatabase, getDatabase } = require('./database.js')
