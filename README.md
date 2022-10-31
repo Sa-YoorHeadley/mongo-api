@@ -128,7 +128,7 @@ In order to run the application type the following command
 npm start
 ```
 
-The Application Runs on **localhost:3001**
+>The Server Runs on **localhost:3001**
 
 <br />
 
